@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TwitterClone</string>
+    <string name="email_adresi">Email Adresi</string>
+    <string name="ifreniz">Şifreniz</string>
+    <string name="ifreni_mi_unuttun">Şifreni Mi Unuttun ?</string>
+    <string name="g_r_yap">GİRİŞ YAP</string>
+    <string name="hala_hesab_n_z_yok_mu">Hala Hesabınız Yok Mu ?</string>
+    <string name="imdi_kay_t_ol">Şimdi Kayıt Ol</string>
+    <string name="title_activity_feed">Twitter Clone</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Ayarlar</string>
+    <string name="title_activity_bottom">bottom</string>
+    <string name="title_home">Anasayfa</string>
+    <string name="title_dashboard">Ara</string>
+    <string name="title_notifications">Bildirimler</string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="title_activity_navigation_draver">navigationDraver</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="oturum_kapat">Oturum Kapat</string>
+    <string name="payla">Paylaş</string>
+    <string name="title_activity_deneme">Settings</string>
+    <string name="share_post_toolbar">Twitter - Tweet Paylaş</string>
+    <string name="neler_oluyor">Neler Oluyor?</string>
+    <string name="tweetle">Tweetle</string>
+
+
+
+</resources>

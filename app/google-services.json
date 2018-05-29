@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "190135489089",
+    "firebase_url": "https://twitterclone-5826f.firebaseio.com",
+    "project_id": "twitterclone-5826f",
+    "storage_bucket": "twitterclone-5826f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190135489089:android:22d10587a7567951",
+        "android_client_info": {
+          "package_name": "com.faruksahin.twitterclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "190135489089-b6083oh342scva8llo27vur2orvll6m4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.faruksahin.twitterclone",
+            "certificate_hash": "525f0b42efb49d7426e0f2b033f05f16a37c4aa0"
+          }
+        },
+        {
+          "client_id": "190135489089-nokovhoi32e9qbj6ngctdc3qkb046lp2.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "190135489089-nokovhoi32e9qbj6ngctdc3qkb046lp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz3gLjx1XadbeZImXQ7jhsZOR8ZWyYKr4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "190135489089-nokovhoi32e9qbj6ngctdc3qkb046lp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
