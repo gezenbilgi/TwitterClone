@@ -18,7 +18,7 @@ Firebase
 Founded in 2011 by Google, this organization aims to provide the most important services to Android, iOS and web developers. For example, in our project, users ' profile pictures, shared situations, likes and notifications are collected in this system. Thanks to this system, The program has been able to determine how many people are actively using the problems experienced in the software has made the work easier. We provide log-in service, database, storage, hosting, function, ml kit, notification, advertisement and Analysis Services to software developers.
 
 
-
+</br>
 Road Map
      
 ✔	Deciding on the purpose of the application
