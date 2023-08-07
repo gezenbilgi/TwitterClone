@@ -20,8 +20,8 @@ import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class post_share extends AppCompatActivity {
-
+public class post_share extends AppCompatActivity implements NotificationSubject{
+    private ArrayList<NotificationObserver> observers = new ArrayList<>();
     private Toolbar toolbar;
     private CircleImageView imageView;
     private TextInputEditText tweet;
@@ -59,9 +59,15 @@ public class post_share extends AppCompatActivity {
                         progress.setMessage("Yükleniyor...");
                         progress.show();
                         String key = UUID.randomUUID().toString();
-                        myRef.child(key).child("Username").setValue(feedActivity.user.getUsername());
+                        String username = feedActivity.user.getUsername();
+                        String tweetText = tweet.getText().toString();
+                        
+                        myRef.child(key).child("Username").setValue(username);
                         myRef.child(key).child("Photo").setValue(feedActivity.user.getPhoto());
-                        myRef.child(key).child("Tweet").setValue(tweet.getText().toString());
+                        myRef.child(key).child("Tweet").setValue(tweetText);
+                        
+                        feedActivity.instance.notifyObservers(username, tweetText); // Notificar después de publicar el tweet
+
                         post_share.this.finish();
                     }
                     progress.dismiss();
@@ -71,6 +77,8 @@ public class post_share extends AppCompatActivity {
                 }
             }
         });
+        
+
     }
 
     @Override
@@ -86,4 +94,21 @@ public class post_share extends AppCompatActivity {
         Snackbar snackbar = Snackbar.make(lay,message,Snackbar.LENGTH_LONG);
         snackbar.show();
     }
+    @Override
+    public void registerObserver(NotificationObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(NotificationObserver observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String username, String tweet) {
+        for (NotificationObserver observer : observers) {
+            observer.onNotificationReceived(username, tweet);
+        }
+    }
+
 }
