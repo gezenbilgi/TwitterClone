@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class notificationFragement extends Fragment
+public class notificationFragement extends Fragment implements NotificationObserver
 {
 
 
@@ -80,5 +80,10 @@ public class notificationFragement extends Fragment
         });
         return view;
     }
-
+     @Override
+    public void onNotificationReceived(String username, String tweet) {
+        usernameDatabase.add(username);
+        tweetDatabase.add(tweet);
+        adapter.notifyDataSetChanged();
+    }
 }

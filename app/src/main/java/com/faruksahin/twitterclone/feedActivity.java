@@ -38,9 +38,10 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class feedActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
+        implements NavigationView.OnNavigationItemSelectedListener,NotificationObserver, NotificationSubject
 {
-
+    private ArrayList<NotificationObserver> observers = new ArrayList<>();
+    public static feedActivity instance;
     private SharedPreferences preferences;
     private FirebaseDatabase database;
     private DatabaseReference userRef;
@@ -77,7 +78,11 @@ public class feedActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+     
         super.onCreate(savedInstanceState);
+        instance = this;
+        notificationFragement notificationFragmentInstance = new notificationFragement();
+        registerObserver(notificationFragmentInstance);
         setContentView(R.layout.activity_feed);
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -193,5 +198,25 @@ public class feedActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @Override
+    public void onNotificationReceived(String username, String tweet) {
+        // Aquí puedes actualizar el feed con el nuevo tweet.
+    }
+    @Override
+    public void registerObserver(NotificationObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(NotificationObserver observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String username, String tweet) {
+        for (NotificationObserver observer : observers) {
+            observer.onNotificationReceived(username, tweet);
+        }
     }
 }
